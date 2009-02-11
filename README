@@ -1,0 +1,14 @@
+=SimplePermalink
+==Intro
+
+
+==Example
+
+	class Post < ActiveRecord::Base
+  	permalink :title
+	end
+
+==Notes
+
+
+Copyright (c) 2009 Emili Parreño (www.eparreno.com), released under the MIT license
