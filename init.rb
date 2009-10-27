@@ -5,8 +5,8 @@ class << ActiveRecord::Base
     class_eval <<-EOF, __FILE__, __LINE__
       before_validation do |r|
         if !r.#{attr}.nil? && r.permalink.nil?
-          total = count(:conditions => {:permalink => r.#{attr}.to_url}) + 1
-          r.permalink = r.#{attr}.to_url + (total.zero? ? "" : "-" + total.to_s)  
+          total = count(:conditions => {:permalink => r.#{attr}.to_url})
+          r.permalink = r.#{attr}.to_url + unless total.zero?: "-" + total.next.to_s end  
         end
       end
       validates_presence_of :permalink
